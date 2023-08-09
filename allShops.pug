@@ -1,0 +1,166 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Document
+        link(rel="stylesheet", href="/css/util.css")
+        link(rel="stylesheet", href="/css/index.css")
+        link(rel="stylesheet", href="/css/landing.css")
+        link(rel="stylesheet", href="/css/allShops.css")
+        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+    body 
+        nav.pad16.flex.flex-2.nav-header
+            .logo-container.flex.flex-dir.flex-1
+                a(href='/')
+                    img(src="/img/inf4.png", alt="", srcset="").logo-img
+                    p.logo cordtects 
+            if userComing
+                .nav-links.flex.flex-2.gap24
+                    //- button.actionBtn Login
+                    //- button.signup-js.actionBtn Signup 
+                    //- a(href='#').link Testimonial
+                    //- a(href='#').link Shop now
+                    //- a(href='#').link Make your shop
+                    //- img(src='/img/list.png' alt='menu bar').menu-icon
+                    //- img(src='/img/cancel.png' alt='menu bar').cancel-icon
+
+                    a(href='#')
+                        img(src="/img/dp.png", alt="dp", srcset="").dp
+
+            else 
+                .nav-links.flex.flex-2.gap24
+                    button.actionBtn.login-js Login
+                    button.signup-js.actionBtn Signup 
+                    a(href='#').link Testimonial
+                    a(href='#').link Shop now
+                    a(href='#').link Make your shop
+        
+        section.section-all-shops 
+            .all-shops-container.grid.grid-6-col.gap16
+                .filters-container
+                    .all-filters-inner-container.grid.grid-1-col.gap32
+                        h4.heading-filter filter your search
+                        .filter-catagory 
+                            form.catagory-filter-form.grid.grid-1-col.gap16
+                                .credetail.flex.flex-dir.gap08
+                                    label.label-form.label-form--update Filter by catagory 
+                                    select.select.input--update
+                                        option.opt(choose='choose below') choose below
+                                        option.opt(choose='books') books
+                                        option.opt(choose='shoes') shoes
+                                        option.opt(choose='dry fruits') dry fruits
+                                        option.opt(choose='fashion') fashion
+                                .credetail.flex.flex-dir.gap08
+                                    label.label-form.label-form--update Filter by location 
+                                    input.input-form.input--update(type="type" placeholder='jalandhar' )
+                                    label.label-form.label-form--update OR 
+                                    button.useCurrentLocation Use current location 
+
+                                .credetail.flex.flex-dir.gap08
+                                    label.label-form.label-form--update Filter by distance 
+                                    <input type="range" min="1" max="10" value="1" class="slider">
+                                .credetail.flex.flex-dir.gap08
+                                    label.label-form.label-form--update Filter by delivery time 
+                                    <input type="range" min="10" max="60" value="10" class="slider">
+
+                                .credetail.flex.flex-dir.gap08
+                                    label.label-form.label-form--update Filter by rating 
+                                    <input type="range" min="0" max="5" value="1" class="slider">
+
+                                .credetail.flex.flex-dir.gap08
+                                    label.label-form.label-form--update Filter by review 
+                                    <input type="range" min="10" max="1000000" value="500" class="slider">
+                                .credetail.flex.flex-dir.gap08
+                                    label.label-form.label-form--update Filter by review 
+                                    button.useCurrentLocation Apply filters
+
+                                
+
+
+                .all-shops.pad16 
+                    .all-shops-inner-container.pad16.grid.grid-1-col.gap32
+                        .search-bar-all-shops.flex.flex-2
+                            form.search-form.flex
+                                input.search-name.input-form.input-form--update.input-search--update(placeholder='reabok showroom' type='text')
+                                
+                                a(href='/all-shops/allShops').search.search-filter search
+                            .location.flex.gap08.flex-1
+                                ion-icon.location-icon(name="location")
+                                p.locate-me Add Current Location
+                        .heading-all-shops 
+                            h4.all-shops-heading Put everything in your pocket!
+                        .all-shops-display.pad48.grid.grid-3-col.gap24
+                            each shop in Shops
+                                .shop-one.grid.grid-1-col.gap16
+                                    .shop-design-circle
+                                    .shop-offer.flex.flex-1
+                                        p.shop-offer-value=`${shop.offer}`
+                                    .shop-image-display
+                                        img(src=`/img/lab1.jpg`, alt="shop", srcset="").shop-img 
+                                        p.name-of-shop=`${shop.shop_name}`
+                                    .shop-description.grid.grid-2-col.pad16
+                                        //- .credential.flex.flex-align.gap08 
+                                        //-     p.shop-name=`${shop.shop_name}`
+                                        .credential.flex.flex-align.gap08 
+                                            p.catagory-label Catagory
+                                            p.catagory-name=`${shop.catagory}`
+                                        .credential.flex.gap08.flex-align
+                                            ion-icon.location-icon(name="location")
+                                            p.location-value=`${shop.location}`
+                                        .credential.flex.flex-align.gap08 
+                                            p.special-label special
+                                            p.special-name=`${shop.special}`
+                                        .credential.flex.flex-align.gap08 
+                                            p.review-label Reviews
+                                            p.review-name=`${shop.reviews}`
+                                        .credential.flex.flex-align.gap08 
+                                            ion-icon(name="time").delivery-icon
+                                            p.review-name=`${shop.delivery_time}`
+                                        .credential.flex.flex-align.gap08 
+                                            p.rating-label Rating
+                                            p.rating-name=`${shop.ratings}`
+                                        .credential.flex.flex-align.gap08 
+                                            ion-icon(name="walk").delivery-icon
+                                            p.review-name=`${shop.distance}` 
+                                        .credential.flex.flex-align.gap08 
+                                            button.wishlist Save shop
+                                        .credential.flex.flex-align.gap08.visit-shop-container
+                                            a(href=`/detail/${shop._id}/${shop.shop_name}`).visit-shop Visit shop
+        script(src="/js/allShops.js")      
+        script(src='https://cdnjs.cloudflare.com/ajax/libs/axios/1.2.2/axios.min.js')
+
+    footer.pad96.footer.flex.flex-dir.gap96
+        .logo-container.flex.flex-dir.flex.align
+            img(src="/img/inf4.png", alt="", srcset="").logo-img-foot
+            p.logo-foot cordtects 
+
+        .footer-container.grid.grid-4-col.gap96
+            .foot-div.flex.flex-dir.gap16 
+                h6.foot-heading Company
+                a(href='#').foot-link About us 
+                a(href='#').foot-link Content now!
+                a(href='#').foot-link Business
+                a(href='#').foot-link Get stared
+            .foot-div.flex.flex-dir.gap16 
+                h6.foot-heading Social 
+                a(href='#').foot-link Twitter
+                a(href='#').foot-link Instagram
+                a(href='#').foot-link Facebook
+            .foot-div.flex.flex-dir.gap16 
+                h6.foot-heading Policy
+                a(href='#').foot-link Terms and conditions 
+                a(href='#').foot-link Return policy
+                a(href='#').foot-link refund ploicy
+                a(href='#').foot-link Shop policy
+            .foot-div.flex.flex-dir.gap16 
+                h6.foot-heading carrier
+                a(href='#').foot-link Apply for job 
+                a(href='#').foot-link internship
+                a(href='#').foot-link Open your store
+                a(href='#').foot-link Our API
+
+

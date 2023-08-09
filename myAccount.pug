@@ -1,0 +1,189 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Document
+        link(rel="stylesheet", href="/css/util.css")
+        link(rel="stylesheet", href="/css/index.css")
+        link(rel="stylesheet", href="/css/landing.css")
+        link(rel="stylesheet", href="/css/myAccount.css")
+
+        link(rel="stylesheet", href="/css/allShops.css")
+        link(rel="stylesheet", href="/css/detailShop.css")
+        link(rel="stylesheet", href="/css/shopregisteration.css")
+
+
+        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+    body 
+        section.section-my-account 
+            .my-account-container.grid.grid-10-col.gap16.pad16 
+                .my-account-navigation.flex.flex-dir.flex-align.gap16 
+                    img(src="/img/avatar2.png", alt="dp", srcset="").dp-my-account
+                    p.customer-name-my-acc= `${user.username}`
+                    button.logoutBtn logout
+                    .account-functionality.flex.flex-dir.gap16 
+                        .credential.flex.flex-2.gap16.function-container.functionalityBtn--personal-setting
+                            ion-icon(name='person-circle-outline').my-acc-icon
+                            button.functionalityBtn Personal setting
+                        .credential.flex.flex-2.gap16.function-container.functionalityBtn-myShop--setting
+                            ion-icon(name='storefront-outline').my-acc-icon
+                            button.functionalityBtn My shop
+                        .credential.flex.flex-2.gap16.function-container
+                            ion-icon(name='analytics-outline').my-acc-icon
+                            button.functionalityBtn Dashboard 
+                        .credential.flex.flex-2.gap16.function-container
+                            ion-icon(name='clipboard-outline').my-acc-icon
+                            button.functionalityBtn Add inventory
+                        .credential.flex.flex-2.gap16.function-container
+                            ion-icon(name='clipboard-outline').my-acc-icon
+                            a(href='/all-shops/allShops').functionalityBtn shop now 
+                        .credential.flex.flex-2.gap16.function-container
+                            ion-icon(name='clipboard-outline').my-acc-icon
+                            button.functionalityBtn your orders
+                        .credential.flex.flex-2.gap16.function-container
+                            ion-icon(name='clipboard-outline').my-acc-icon
+                            button.functionalityBtn refunds and cancel 
+                        
+
+                .my-account-setting.pad08
+                    .change-product-pop-up
+                        .change-product-container.pad16.grid.grid-2-col.gap24
+                            .prev-credentials.grid.grid-2-col.gap16 
+                                h2.changing-credential-heading product information
+                                .credentials.flex.flex-dir.gap08
+                                    p.prev-product-name Shop name 
+                                    p.prev-product-name-value Sardar collection 
+                                .credentials.flex.flex-dir.gap08
+                                    p.prev-shop-product-price price
+                                    p.prev-shop-product-value.prev_product_price 999
+                                .credentials.flex.flex-dir.gap08
+                                    p.prev-shop-product-price description
+                                    p.prev-shop-product-value.prev_product_des Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam voluptate architecto totam cupiditate praesentium, beatae sequi repellat? Quam ullam inventore, magni recusandae facilis repellendus, accusamus reiciendis laudantium minus amet exercitationem.
+                                .credentials.flex.flex-dir.gap08
+                                    p.prev-shop-product-price speciality
+                                    p.prev-shop-product-value.prev_specility_of_shop sarri
+                                button.cancelbtn-inventory-product cancel
+
+
+                            .changing-credentials.grid.grid-2-col.gap16
+                                .credentials.flex.flex-dir.gap08 
+                                    label.label-inventory-product enter new name of product
+                                    .changing-box.flex.flex-align
+                                        input.input-inventory-product-update(placeholder='google echo' type='text')
+                                        button.change-credential-btn Change
+                                .credentials.flex.flex-dir.gap08 
+                                    label.label-inventory-product enter new price of product
+                                    .changing-box.flex.flex-align
+                                        input.input-inventory-product-update(placeholder='999' type='number')
+                                        button.change-credential-btn Change
+
+                                .credentials.flex.flex-dir.gap08 
+                                    label.label-inventory-product enter new description of product
+                                    .changing-box.flex.flex-align
+                                        input.input-inventory-product-update(placeholder='description...' type='text')
+                                        button.change-credential-btn Change
+
+                                .credentials.flex.flex-dir.gap08 
+                                    label.label-inventory-product enter new spaciality of product
+                                    .changing-box.flex.flex-align
+                                        input.input-inventory-product-update(placeholder='special' type='text')
+                                        button.change-credential-btn Change
+
+                    .personal-settings.pad08
+                        .personal-setting-container.pad08.flex.flex-dir.gap24
+                            .display-current-info-contianer.grid.grid-5-col.gap16.pad16
+                                h2.change-credentials-heading.acc-heading-top--update Personal information 
+                                .credential.flex.flex-1.gap08.credentail-acc
+                                    p.name-acc-default Name: -
+                                    p.name-acc-default-value= `${user.username}`
+                                if userShop.length!=0
+                                    .credential.flex.flex-1.gap08.credentail-acc
+                                        p.name-acc-default shop name: - 
+                                        p.name-acc-default-value sardar collection
+                                    .credential.flex.flex-1.gap08.credentail-acc
+                                        p.name-acc-default shop catagory: - 
+                                        p.name-acc-default-value real estate 
+                                    .credential.flex.flex-1.gap08.credentail-acc
+                                        p.name-acc-default shop location: - 
+                                        p.name-acc-default-value jalandhar
+                                    .credential.flex.flex-1.gap08.credentail-acc
+                                        p.name-acc-default shop specialality: - 
+                                        p.name-acc-default-value daster's
+                                if userShop.length==0
+                                    .credential.flex.flex-1.gap08.credentail-acc
+                                        a(href='/').open-store-from-my-acc-btn open your store now 
+
+                                
+                            .change-personla-info-contianer.pad16.grid.grid-2-col.gap16 
+                                h2.change-credentials-heading Personal settings
+                                .credential.flex.flex-align.gap16
+                                    label.label-acc Name 
+                                    input.input-acc(placeholder='tarsem singh' type='text')
+                                if userShop.length!=0
+                                    .credential.flex.flex-align.gap16
+                                        label.label-acc shop name 
+                                        input.input-acc(placeholder='tarsem singh' type='text')
+                                    .credential.flex.flex-align.gap16
+                                        label.label-acc shop catagory 
+                                        input.input-acc(placeholder='tarsem singh' type='text')
+                                    .credential.flex.flex-align.gap16
+                                        label.label-acc location 
+                                        input.input-acc(placeholder='tarsem singh' type='text')
+                                        button.location-acc-btn use GPS     
+
+                            .change-account-password.pad16.flex.flex-dir.gap16 
+                                h2.change-credentials-heading Change password
+                                .credential.flex.flex-1 
+                                    input.input-email-password-forgot(placeholder='enter your account email' type='email')
+                                    button.forgot-password-acc Change password    
+
+                    .my-shop-settings.pad08 
+                        if userShop.length==0
+                            .my-shop-setting-container.flex.flex-dir.pad16.gap24
+                                .shop-essential-credentails.grid.grid-4-col.gap16
+                                    .credential.flex.flex-1.gap08.credentail-acc
+                                        a(href='/').open-store-from-my-acc-btn open your store now 
+                        if userShop.length!=0
+                            .my-shop-setting-container.flex.flex-dir.pad16.gap24
+                                .shop-essential-credentails.grid.grid-4-col.gap16
+                                    h2.shop-credential-heading Shop credentials
+                                    .credential.flex.flex-align.gap16 
+                                        p.product-list Existing products 
+                                        select.select
+                                            each product in [...userShopProduct[0].products, ...userShopProduct[0].famousProducts]
+                                                option.opt(value=`${product.shop_name}`)= `${product.shop_name}`
+                                    .credential.flex.flex-align.gap16 
+                                        p.product-list Total products 
+                                        p.total-products-value= `${[...userShopProduct[0].products, ...userShopProduct[0].famousProducts].length}`
+                                    .credential.flex.flex-align.gap16 
+                                        p.product-list Todays sales 
+                                        p.total-products-value $50 
+                                    .credential.flex.flex-align.gap16 
+                                        p.product-list Monthly sales 
+                                        p.total-products-value $489
+
+                                .shop-current-products     
+                                    .my-shop-product-container.pad16.gap24.flex.flex-dir
+                                        h2.shop-product-heading Inventory
+                                        .inventory-container.grid.grid-4-col.gap16
+                                            if userShopProduct.length==0
+                                                .credential.flex.flex-1.gap08.credentail-acc.no-products-available
+                                                    h3.np-product-available-yet no product in inventory
+                                                    a(href='/').open-store-from-my-acc-btn add products now
+                                            each product in [...userShopProduct[0].products, ...userShopProduct[0].famousProducts]
+
+                                                .inventory-product.flex.flex-dir.gap08 
+                                                    img(src="/img/shop1.jpg", alt="product-image").inventory-product-img
+                                                    .credentials-ofshop.grid.grid-2-col.gap08 
+                                                        p.inventory-shop-name.itisActuallyProductName= `${product.shop_name}`
+                                                        p.inventory-product-price= `${product.price}`
+                                                        p.inventory-product-des= `${product.product_des}`
+                                                        p.speciality-of-inventory-product.itIsActuallyShopName= `${product.shopName}`
+                                                        button.update-product Update product
+                                                    
+        
+        script(src="/js/my-acc.js") 

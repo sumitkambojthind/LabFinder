@@ -1,0 +1,108 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Document
+        link(rel="stylesheet", href="/css/util.css")
+        link(rel="stylesheet", href="/css/index.css")
+        link(rel="stylesheet", href="/css/landing.css")
+        link(rel="stylesheet", href="/css/allShops.css")
+        link(rel="stylesheet", href="/css/detailShop.css")
+        link(rel="stylesheet", href="/css/shopregisteration.css")
+
+
+        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+    body 
+        section.add-products-section.grid-15-col.grid
+            .overlay-add-product
+            .addProductPopUp.pad48
+                .credential.flex.flex-1.flex-dir.gap16 
+                    ion-icon(name='checkmark-done-outline').check-pop
+                    h3.popup-open-shop-heading Product added sucessfully 
+                    p.open-store-cong Your product is added to your shop 
+                    //- a(href='/open-store/add-products').addProductsPageBtn proceed to add products
+            .delete-product-from-inventory.pad48 
+                .credential.flex.flex-1.flex-dir.gap16 
+                    ion-icon(name='checkmark-done-outline').check-pop
+                    h3.popup-open-shop-heading Are you sure to remove 
+                    button.removeConfirmationBtn sure
+
+
+            .switch-product-panels.pad16.flex.flex-dir.flex-align.gap16
+                ion-icon(name='home').icon-product
+            .product-adding-panel.pad48 
+                form.product-add-form.flex.flex-dir.gap16.pad48 
+                    .heading-add-product.flex.flex-dir.flex-1.gap08 
+                        h3.addProduct-heading Add products
+                        p.addproduct-des Add common products in this section
+                    .credential.flex.flex-dir.gap08 
+                        label.label-shop product name 
+                        input.input-shop.productName(placeholder='beokes shoe' type='text')
+                    .credential.flex.flex-dir.gap08 
+                        label.label-shop price 
+                        input.input-shop.productPrice(placeholder='899/-' type='number')
+                    .credential.flex.flex-dir.gap08 
+                        label.label-shop product description 
+                        input.input-shop.productDes(placeholder='description...' type='text')
+                    .credential.flex.flex-dir.gap08 
+                        label.label-shop product image 
+                        input.input-shop(placeholder='upload image' type='file')
+                    .credential.flex.flex-dir.gap08 
+                        label.label-shop product catagory
+                        select.select-shop.productCatagory 
+                            option.opt(value='choose below') choose below
+                            option.opt(value='general') general
+                            option.opt(value='famous') famous
+                    .credential.flex.flex-dir.gap08 
+                        label.label-shop Add product 
+                        button.addProductToShopBtn Add product to shop
+            .added-products-display-panel
+                .visible-products-panel.pad16.flex.flex-dir.gap48
+                    .heading-add-product.flex.flex-dir.flex-1.gap08 
+                        h3.addProduct-heading Your Inventry
+                        p.addproduct-des your products that currently visibe in your shop
+                        form.find-added-product.flex.flex-2.gap96
+                            .credentails.flex.flex-align
+                                input.input-form.input-form--shop-inventory(placeholder='black chana' type='text')
+                                a(href='#').searchInInventory.findAddedProductFromInventory search in inventory
+                            .credentails.flex.flex-align
+                                select.select-form 
+                                    option.opt(value='sort') sort
+                                    option.opt(value='common') common
+                                    option.opt(value='famous') famous 
+
+            
+                    .visible-products-container.grid.grid-3-col.gap16 
+
+                        each famProduct in famousProducts
+                            .visible-product.flex.flex-dir.gap16.pad16.visible-famous-product
+                                img(src="/img/shop6.jpg", alt="product", srcset="").visible-product-img
+                                .visible-product-content.grid.grid-2-col.gap16
+                                    h4.visible-product-name= `${famProduct.shop_name}`
+                                    p.visible-product-price= `${famProduct.price}`
+                                    p.visible-product-price famous
+                                    p.visible-product-des= `${famProduct.product_des}`
+                                button.removeVisibleProduct.removeVisibleProduct--common Remove Item
+                                .product-catagory-banner
+                                    p= `#${Math.trunc(Math.random()*1000000000) + 50999}`
+
+                        each product in commonProducts
+                            .visible-product.flex.flex-dir.gap16.pad16 
+                                img(src="/img/shop6.jpg", alt="product", srcset="").visible-product-img
+                                .visible-product-content.grid.grid-2-col.gap16
+                                    h4.visible-product-name= `${product.shop_name}`
+                                    p.visible-product-price= `${product.price}`
+                                    p.visible-product-price common
+                                    p.visible-product-des= `${product.product_des}`
+                                button.removeVisibleProduct.removeVisibleProduct--common Remove Item
+                                .product-catagory-banner
+                                    p= `#${Math.trunc(Math.random()*1000000000) + 50999}`
+
+
+                
+        script(src="/js/addProduct.js")
+        script(src='https://cdnjs.cloudflare.com/ajax/libs/axios/1.2.2/axios.min.js')

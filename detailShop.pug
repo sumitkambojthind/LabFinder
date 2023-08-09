@@ -1,0 +1,146 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Document
+        link(rel="stylesheet", href="/css/util.css")
+        link(rel="stylesheet", href="/css/index.css")
+        link(rel="stylesheet", href="/css/landing.css")
+        link(rel="stylesheet", href="/css/allShops.css")
+        link(rel="stylesheet", href="/css/detailShop.css")
+
+        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+    body 
+        nav.pad16.flex.flex-2.nav-header
+            .logo-container.flex.flex-dir.flex-1
+                a(href='/')
+                    img(src="/img/inf4.png", alt="", srcset="").logo-img
+                    p.logo cordtects 
+            
+            .nav-links.flex.flex-2.gap24
+                //- button.actionBtn Login
+                //- button.signup-js.actionBtn Signup 
+                //- a(href='#').link Testimonial
+                //- a(href='#').link Shop now
+                //- a(href='#').link Make your shop
+                //- img(src='/img/list.png' alt='menu bar').menu-icon
+                //- img(src='/img/cancel.png' alt='menu bar').cancel-icon
+
+                a(href='#')
+                    img(src="/img/dp.png", alt="dp", srcset="").dp
+
+        section.section-detail-shop 
+            .detail-shop-container.flex.flex-dir
+                .shop-header.grid.grid-4-col.gap96.pad48
+                    
+                    .shop-image
+                        img(src=`${shopProducts[0].shop_id.image}`, alt="shop", srcset="").shop-img.shop-img--update
+                    .shop-details.flex.flex-dir.gap16 
+                        .shop-det.flex.flex-dir.gap08 
+                            p.shop-name-detail=`${shopProducts[0].shop_id.shop_name}` 
+                            p.shop-city-detail=`${shopProducts[0].shop_id.location}`  
+                            p.shop-special-detail=`special : - ${shopProducts[0].shop_id.special}` 
+                        .shop-detail-statics.flex.flex-align.gap32 
+                            .ratings-detail.flex.flex-align.gap08
+                                p.star-detail &star;
+                                p.rating-detail-value=`${shopProducts[0].shop_id.ratings}` 
+                            .ratings-detail.flex.flex-align.gap08
+                                p.star-detail &star;
+                                p.review-detail-value=`${shopProducts[0].shop_id.reviews} 5star` 
+                            .ratings-detail.flex.flex-align.gap08
+                                p.minOrder-detail-value 500/- for free delivery
+                    .shop-offer-detail.pad16.flex.flex-dir.gap16
+                        p.offer-shop-label Offers 
+                        .credential.flex.flex-align.gap08
+                            ion-icon(name="checkmark-done-outline").offer-icon
+                            p.offer-detail-value 50% off on order above 800
+                        .credential.flex.flex-align.gap08
+                            ion-icon(name="checkmark-done-outline").offer-icon
+                            p.offer-detail-value 50% off on order above 800
+                        .credential.flex.flex-align.gap08
+                            ion-icon(name="checkmark-done-outline").offer-icon
+                            p.offer-detail-value 50% off on order above 800
+        
+        section.section-shop-menu 
+            .shop-menu-container.grid.grid-7-col
+                .shop-menu-list.most-famous-products.pad16.flex.flex-dir.gap16 
+                    .shop-menu-heading.flex.flex-dir.gap08
+                        h3.menu-heading Brooks famous for 
+                        p.menu-subheading 5+ products
+                    each product in famous
+                        .famous-product.flex.flex-dir.gap08.pad16 
+                            .image-product-effect
+                                img(src=`${product.image}`, alt="shop", srcset="").shop-img.shop-img--update
+                            .products-detail.grid.grid-2-col.pad08.gap08
+                                p.product-name=`${product.shop_name}`
+                                p.product-price=`${product.price}`
+                                p.product-description=`${product.product_des}`
+                                button.addtoCardProductBtn Add+
+                                button.addtoWishListProductBtn wish+
+
+
+                .shop-menu-content.flex.flex-dir.gap16 
+                    .shop-menu-heading.flex.flex-dir.gap08
+                        h3.menu-heading our delicious menu 
+                        p.menu-subheading= `${products.length} + products`
+                        form.search-product.flex.flex-align 
+                            input.input-form.input-form--update.input-search--update(placeholder='product name' type='text')
+                            a(href='#').search-product-byname search
+                    .shop-menu-cards.grid.grid-2-col.gap24 
+                        each item in products
+                            .menu-card.flex.flex-dir.gap08 
+                                .image-product-effect
+                                    img(src=`${item.image}`, alt="shop", srcset="").shop-img.shop-img--update
+                                .products-detail.grid.grid-2-col.pad08.gap08
+                                    p.product-name=`${item.shop_name}`
+                                    p.product-price=`${item.price}`
+                                    p.product-description=`${item.product_des}`
+                                    button.addtoCardProductBtn Add+
+                                    button.addtoWishListProductBtn wish+
+                                    p.product-price.product-shop-name=`${item.shopName}`
+                        
+                       
+                .shop-checklist.pad16 
+                    .shop-menu-heading.flex.flex-dir.gap08
+                        h3.menu-heading Your card (jab second time uantity edit kerte he to vo existing price se multiply hote he na ki original price se)
+                        p.menu-subheading 1000+ for free delivery
+                    .shopping-cart.flex.flex-dir.gap16.pad16
+                        each item in cartItems
+                            .cart-one.flex.flex-dir.gap08.pad08
+                                .name-and-delete.flex.flex-2
+                                    h4.cart-product-name= `${item.product_name}` 
+                                    p.cart-product-price= `${item.product_price}/-`
+                                    .quantity-setting.flex.flex-align.gap08 
+                                        select.select.select--update.cartquantity-inhencer(value=`${item.product_quantity}`)
+                                            option(value='01')= `${item.product_quantity}`
+                                            option(value='01') 01
+                                            option(value='02') 02
+                                            option(value='03') 03
+                                            option(value='04') 04
+                                            option(value='05') 05
+                                            option(value='06') 06
+                                            option(value='07') 07
+                                            option(value='08') 08
+                                            option(value='09') 09
+                                            option(value='10') 10
+                                            option(value='11') 11
+                                            option(value='12') 12
+                                            option(value='13') 13
+                                            option(value='14') 14
+                                            option(value='15') 15
+                                            option(value='16') 16
+                                            option(value='17') 17
+                                            option(value='18') 18
+                                            option(value='19') 19
+                                            option(value='20') 20
+
+
+
+                                                         
+                                    button.delete-product &cross;
+        script(src="/js/cart.js") 
+        script(src='https://cdnjs.cloudflare.com/ajax/libs/axios/1.2.2/axios.min.js')

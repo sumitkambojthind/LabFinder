@@ -1,0 +1,75 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Document
+        link(rel="stylesheet", href="/css/util.css")
+        link(rel="stylesheet", href="/css/index.css")
+        link(rel="stylesheet", href="/css/landing.css")
+        link(rel="stylesheet", href="/css/allShops.css")
+        link(rel="stylesheet", href="/css/detailShop.css")
+        link(rel="stylesheet", href="/css/shopregisteration.css")
+
+
+        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+    body 
+        //- nav.pad16.flex.flex-2.nav-header
+        //-     .logo-container.flex.flex-dir.flex-1
+        //-         a(href='/')
+        //-             img(src="/img/inf4.png", alt="", srcset="").logo-img
+        //-             p.logo cordtects 
+            
+        //-     .nav-links.flex.flex-2.gap24
+        //-         //- button.actionBtn Login
+        //-         //- button.signup-js.actionBtn Signup 
+        //-         //- a(href='#').link Testimonial
+        //-         //- a(href='#').link Shop now
+        //-         //- a(href='#').link Make your shop
+        //-         //- img(src='/img/list.png' alt='menu bar').menu-icon
+        //-         //- img(src='/img/cancel.png' alt='menu bar').cancel-icon
+
+        //-         a(href='#')
+        //-             img(src="/img/dp.png", alt="dp", srcset="").dp
+        section.open-store-registeration-form.pad96
+            .overlay-store-open
+            .open-store-popup.pad48 
+                .credential.flex.flex-1.flex-dir.gap16 
+                    ion-icon(name='checkmark-done-outline').check-pop
+                    h3.popup-open-shop-heading Congratulation 
+                    p.open-store-cong Your store is registered and open proceed further and add products 
+                    a(href='/open-store/add-products').addProductsPageBtn proceed to add products
+            form.open-store-form.grid.grid-2-col.gap16.pad48
+                .headings-registeration.flex.flex-1.flex-dir.gap08 
+                    h2.registeration-heading Register your shop
+                    p.registeration-des Open store in just 2 steps
+                .credential.flex.flex-dir.gap08
+                    label.label-shop shop name 
+                    input.input-shop.open_shop_name(placeholder="john brokker" type='text')
+                .credential.flex.flex-dir.gap08
+                    label.label-shop catagory
+                    select.select-shop.open_shop_catagory 
+                        option.opt(value='choose below') choose below
+                        option.opt(value='Books') Books
+                        option.opt(value='grocery') grocery
+                        option.opt(value='electronics') electronics
+                        option.opt(value='real estate') real estate
+                        option.opt(value='printing') printing
+                        option.opt(value='software') software
+                .credential.flex.flex-dir.gap08
+                    label.label-shop location 
+                    input.input-shop.open_shop_location(placeholder="ambala" type='text')
+                .credential.flex.flex-dir.gap08
+                    label.label-shop special about your shop
+                    input.input-shop.open_shop_special(placeholder="fresh cashews" type='text')
+                .credential.flex.flex-dir.gap08
+                    label.label-shop shop image
+                    input.input-shop(placeholder="shop image" type='file')
+                .credential.flex.flex-dir.gap08
+                    label.label-shop Submit 
+                    button.openStoreBtn Open your store                    
+        script(src="/js/shopRegisteration.js") 
+        script(src='https://cdnjs.cloudflare.com/ajax/libs/axios/1.2.2/axios.min.js')

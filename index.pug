@@ -1,0 +1,414 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Document
+        link(rel="stylesheet", href="/css/util.css")
+        link(rel="stylesheet", href="/css/index.css")
+        link(rel="stylesheet", href="/css/landing.css")
+
+
+    body 
+        nav.pad16.flex.flex-2.nav-header
+            .logo-container.flex.flex-dir.flex-1
+                img(src="/img/inf4.png", alt="", srcset="").logo-img
+                p.logo cordtects 
+            if userComing
+                .nav-links.flex.flex-2.gap24
+                    //- button.actionBtn Login
+                    //- button.signup-js.actionBtn Signup 
+                    //- a(href='#').link Testimonial
+                    //- a(href='#').link Shop now
+                    //- a(href='#').link Make your shop
+                    img(src='/img/list.png' alt='menu bar').menu-icon
+                    img(src='/img/cancel.png' alt='menu bar').cancel-icon
+
+                    a(href='/my-account')
+                        img(src="/img/dp.png", alt="dp", srcset="").dp
+
+            else 
+                .nav-links.flex.flex-2.gap24
+                    button.actionBtn.login-js Login
+                    button.signup-js.actionBtn Signup 
+                    a(href='#').link Testimonial
+                    a(href='#').link Shop now
+                    a(href='#').link Make your shop
+        
+            section.error-message 
+                .error-container 
+                    p.error-message-value error-message 
+                        
+
+        header.header 
+            .design-circle
+            .design-circle-1
+            .design-circle-2
+            .design-circle-3
+            .design-circle-4
+            .header-content.grid.grid-2-col
+                .content.flex.flex-dir.gap24 
+                    h1.primary-heading Finding the lab is not a big deal with lab finder .
+                    p.des we are here to provide you the best possible labs that will help you to improve your health in better way, now labfinder is here for you all to help to find the best possible labs.
+                    form.search-box 
+                        .credential.flex 
+                            input.input(placeholder='enter shop name' type='text')
+                            button.button Search
+                    p.phrase more than 100+ labs registered and more than 1000+ product delivered
+                .img 
+                    img(src="/img/house.png", alt="house").house-img
+                .header-ad 
+                    p.ad Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum, error, nemo quae tempora, fugit culpa rerum placeat ratione dolor id nihil? Quaerat adipisci provident itaque nobis quam necessitatibus quo quae?
+            section.overlay
+            
+
+            section.signup-section 
+                .signup-container 
+                    form.signup-form.pad48.flex.flex-dir.gap16
+                        .credential.flex.flex-dir.gap08 
+                            label.label-form Username
+                            input.input-form.username-signup(placeholder='tarsem singh' type='text')
+                        .credential.flex.flex-dir.gap08 
+                            label.label-form Email
+                            input.input-form.email-signup(placeholder='tarsem@gmail.com' type='email')
+                        .credential.flex.flex-dir.gap08 
+                            label.label-form password 
+                            input.input-form.password-signup(placeholder='***********' type='password')
+                        .credential.flex.flex-dir.gap08 
+                            label.label-form confirm password
+                            input.input-form.ConfirmPassword-signup(placeholder='*********' type='password')
+                        .credential.flex.flex-dir.gap08 
+                            label.label-form catagory
+                            select.select.catagory-signup
+                                option.opt(value='choose below') choose below
+                                option.opt(value='shop owner') shop owner
+                                option.opt(value='customer') customer
+                        .credential.flex.flex-dir.gap08 
+                            button.signup-btn sign up! 
+
+            section.login-section 
+                .login-container 
+                    form.login-form.pad48.flex.flex-dir.gap16 
+                        .credential.flex.flex-dir.gap08
+                            label.label-form email
+                            input.input-form.email-login(placeholder='tarsem@gmail.com' type='email')
+                        .credential.flex.flex-dir.gap08
+                            label.label-form password
+                            input.input-form.password-login(placeholder='**********' type='password')
+                        .credential.flex.flex-dir.gap08
+                            button.login-btn login 
+                            a(href='#').forgot-password Forgot password
+
+            section.menubar.pad48
+                .menubar-container.flex.flex-dir.gap08
+                    h5.menubar-heading Cordtects Menu
+                    a(href='/all-shops/allShops').menubar-link.menuItem Shop now!
+                    a(href='#').menubar-link.menuItem Testimonials
+                    a(href='#').menubar-link.menuItem Featues
+                    a(href='#').menubar-link.menuItem Weekend sales
+                    a(href='#').menubar-link.menuItem Offers
+                    a(href='#').menubar-link.menuItem My account
+                    a(href='#').menubar-link.menuItem orders
+                    a(href='#').menubar-link.menuItem History
+                    a(href='#').menubar-link.menuItem Refunds
+
+                    a(href='/open-store').menubar-link.menuItem open your store
+
+                    a(href='#').menubar-link.menuItem come in touch 
+                    a(href='#').menubar-link.menuItem Write Blog
+                    a(href='#').menubar-link.menuItem Read business Article
+
+
+
+        section.section-feature.pad96 
+            .feature-container.grid.grid-4-col.gap96 
+                .heading-container.flex.flex-1.gap16.flex-dir
+                    .main-head.flex.flex-1.gap16
+                        img(src="/img/inf4.png", alt="logo", srcset="").logo-img
+                        h2.secondary-heading Our all feature you can get
+                        img(src="/img/inf4.png", alt="logo", srcset="").logo-img
+                    p.subheading Our premium and exiting features
+
+                .feature-1.flex.flex-1.flex-dir.gap16.pad16 
+                    img(src="/img/shop1.png", alt="shopping").icon
+                    h3.feature-heading finding near by labs
+                    p.feature-des You are able to findout the nearest best possible laboratories with reasonable prices, so comfort is the first preference of labfinder
+                .feature-2.flex.flex-1.flex-dir.gap16.pad16 
+                    img(src="/img/shop1.png", alt="shopping").icon
+                    h3.feature-heading Overall comparision
+                    p.feature-des we all can compare the relavent laboratories by all features.
+                .feature-3.flex.flex-1.flex-dir.gap16.pad16 
+                    img(src="/img/shop1.png", alt="shopping").icon
+                    h3.feature-heading verified laboratories
+                    p.feature-des we all registered only verified laboratories that is registered in gov. of india.
+                .feature-4.flex.flex-1.flex-dir.gap16.pad16 
+                    img(src="/img/shop1.png", alt="shopping").icon
+                    h3.feature-heading online booking of lab tests
+                    p.feature-des We can book online lab test, home sample picking is also available.
+                .feature-5.flex.flex-1.flex-dir.gap16.pad16 
+                    img(src="/img/shop1.png", alt="shopping").icon
+                    h3.feature-heading More than 100+ test available
+                    p.feature-des we are giving more than 100+ test including, urine test, blood test, sugar test etc.
+                .feature-6.flex.flex-1.flex-dir.gap16.pad16 
+                    img(src="/img/shop1.png", alt="shopping").icon
+                    h3.feature-heading easy for B2B business
+                    p.feature-des Any vendor can registered with us and officialy our partner after KYC.
+                .feature-7.flex.flex-1.flex-dir.gap16.pad16 
+                    img(src="/img/shop1.png", alt="shopping").icon
+                    h3.feature-heading upto 99% discount
+                    p.feature-des we are giving huge amount of discounts and giving customers to a premium feeling.
+                .feature-8.flex.flex-1.flex-dir.gap16.pad16 
+                    img(src="/img/shop1.png", alt="shopping").icon
+                    h3.feature-heading available for 24/7 service
+                    p.feature-des we are available for 24/7 service whole day and night
+
+        section.section-famous-products.pad96
+            .heading-container.flex.flex-1.gap16.flex-dir
+                .main-head.flex.flex-1.gap16
+                    img(src="/img/inf4.png", alt="logo", srcset="").logo-img
+                    h2.secondary-heading weekend sales 
+                    img(src="/img/inf4.png", alt="logo", srcset="").logo-img
+                p.subheading premium products as low as 60% off 
+            .product-container.grid.grid-2-col.gap16 
+                .product-img-container.flex.flex-dir.gap16
+                    .look-products 
+                        img(src="/img/lab4.jpg", alt="product", srcset="").product-img
+                        .offer.flex.flex-1.flex-dir.gap16
+                            p.offer-value 50%
+                            p.left-product 5 left
+                    .product-grid.grid.grid-5-col.gap16
+                        .product-next
+                        .product-next
+                        .product-next
+                        .product-next
+                        .product-next
+                        .product-next
+                        .product-next
+
+
+
+                .product-description.flex.flex-dir.gap16.pad96
+                    h2.secondary-heading fully functional HIV testing
+                    .price-container.flex.gap16
+                        p.price Rs.
+                        p.price-value 1000/-
+                    .availability.flex.flex-dir.gap16 
+                        h4.fouth-heading Availabilty 
+                        .available-option.grid.grid-3-col.gap16 
+                            button.option-1 HIV infection
+                            button.option-1 HIV p24 intigen
+                            button.option-1 HIV 12 anti
+                            button.option-1 RNA-PCR 
+                    ul.list 
+                        li.flex.gap16
+                            img(src="/img/inf4.png", alt="logo", srcset="").logo-img-update
+                            p With 24 hr report outputs
+                        li.flex.gap16
+                            img(src="/img/inf4.png", alt="logo", srcset="").logo-img-update
+                            p Complete diagnosis explains
+                        li.flex.gap16
+                            img(src="/img/inf4.png", alt="logo", srcset="").logo-img-update
+                            p chlorine free paper are used
+                        li.flex.gap16
+                            img(src="/img/inf4.png", alt="logo", srcset="").logo-img-update
+                            p reduced cost for treatment
+                        
+                    button.add-to-card-btn Book now!
+
+
+        section.section-top-offers
+            .heading-container.flex.flex-align.gap16.flex-dir
+                .main-head.flex.flex-align.gap16
+                    img(src="/img/inf4.png", alt="logo", srcset="").logo-img
+                    h4.fifth-heading Our all feature you can get
+                    img(src="/img/inf4.png", alt="logo", srcset="").logo-img
+                p.subheading Our premium and exiting features
+            .product-card-section.grid.grid-3-col.gap96
+                .product.grid.grid-1-col.gap16.pad16
+                    .product-design-cicrle
+                    .offer-product.flex.flex-1.gap08.flex-dir 
+                        p.offer-value-product -20% 
+                    .product-display
+                        img(src="/img/lab2.jpg", alt="product", srcset="").product-img
+                        .design-flipper.grid.grid-2-col.pad48.gap16 
+                            button.btn xxx
+                            button.btn xxx
+                            button.btn xxx
+                            button.btn xxx 
+                    .info-product.flex.flex-1.flex-dir.gap16
+                        h6.sixth-heading Lal path labs
+                        p.offer-discussion one of the top brands now here 
+                        p.price-offer 100₹ - 250₹
+                    .star.flex.flex-1.gap08
+                        p.ratingAndReview &star;
+                        p.ratingAndReview &star;
+                        p.ratingAndReview &star;
+                        p.ratingAndReview &star;
+                        p.ratingAndReview &star;
+                        p.rating (58963+)
+                    button.BuyBtn Buy Now
+
+
+                .product-one.grid.grid-1-col.gap16.pad16 
+                    .product-design-cicrle-one
+
+                    .offer-product-one.flex.flex-1.gap08.flex-dir 
+                        p.offer-value-product -20% 
+                    .product-display
+                        img(src="/img/lab1.jpg", alt="product", srcset="").product-img
+                        .design-flipper.grid.grid-2-col.pad48.gap16 
+                            button.btn xxx
+                            button.btn xxx
+                            button.btn xxx
+                            button.btn xxx 
+                    .info-product.flex.flex-1.flex-dir.gap16
+                        h6.sixth-heading jerath path lab
+                        p.offer-discussion one of the top brands now here
+                        p.price-offer 100₹ - 250₹
+                    .star.flex.flex-1.gap08
+                        p.ratingAndReview &star;
+                        p.ratingAndReview &star;
+                        p.ratingAndReview &star;
+                        p.ratingAndReview &star;
+                        p.ratingAndReview &star;
+                        p.rating (58963+)
+                    button.BuyBtn.BuyBtn--one Buy Now
+                
+                
+                .product-two.grid.grid-1-col.gap16.pad16 
+                    .product-design-cicrle-two
+
+                    .offer-product-two.flex.flex-1.gap08.flex-dir 
+                        p.offer-value-product -20% 
+                    .product-display
+                        img(src="/img/lab3.jpg", alt="product", srcset="").product-img
+                        .design-flipper.grid.grid-2-col.pad48.gap16 
+                            button.btn xxx
+                            button.btn xxx
+                            button.btn xxx
+                            button.btn xxx 
+                    .info-product.flex.flex-1.flex-dir.gap16
+                        h6.sixth-heading path care lab 
+                        p.offer-discussion one of the top brands now here in your pocket 
+                        p.price-offer 100₹ - 250₹
+                    .star.flex.flex-1.gap08
+                        p.ratingAndReview &star;
+                        p.ratingAndReview &star;
+                        p.ratingAndReview &star;
+                        p.ratingAndReview &star;
+                        p.ratingAndReview &star;
+                        p.rating (58963+)
+                    button.BuyBtn.BuyBtn--two Buy Now
+                
+        section.section-testimonial.pad96.grid.grid-1-col.gap48
+            .design-bar
+            .design-bar-1
+            .design-bar-2
+
+            .testimonial.flex.flex-1.flex-dir.gap24.pad48 
+                .testimonial-heading.flex.flex-align.gap08
+                    h6.test-heading Testimonials 
+                    p.happy-customer Our happy Customers  
+                .testimonial-image-name.flex.gap96.flex-align
+                    .img-container
+                        img(src="/img/dsdsd.jpg", alt="person image", srcset="").person-img
+                    .testimonial-name-content.flex.flex-dir.gap08
+                        p.customer-name Raman singh 
+                        p.type Customer
+                .testimonial-value 
+                    p.testimonial-review Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias, nam commodi corporis vero temporibus est iusto tempore error, consequuntur assumenda velit! Asperiores suscipit optio saepe soluta deserunt pariatur nihil illo?
+                .next-testimonial-counter 
+                    .dots.flex.flex-1.gap16
+                        p.dot &dot;
+                        p.dot &dot;
+                        p.dot &dot;
+            
+        section.section-blog-post.pad96.flex.flex-dir.gap96
+            .heading-container.flex.flex-align.gap16.flex-dir
+                .main-head.flex.flex-align.gap16
+                    img(src="/img/inf4.png", alt="logo", srcset="").logo-img
+                    h4.fifth-heading Our Latest blog posts
+                    img(src="/img/inf4.png", alt="logo", srcset="").logo-img
+            .blog-container.grid.grid-4-col.gap16 
+                .blog-1.pad16.flex.flex-dir.gap48
+                    .namings.flex.flex-align.gap16
+                        img(src="/img/test2.jpg", alt="person", srcset="").blog-img
+                        .blog-writer-name 
+                            p.blog-name Curdforts B2B is awosome!
+                            p.writer-name william jon
+                    .blog-content.flex.flex-dir.gap16
+                        p.blog-value Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aspernatur in enim laboriosam exercitationem, cum corporis ut, dolor alias ducimus adipisci minus eius debitis sit at illo aliquid. Praesentium, perferendis saepe!
+                        p.des-blog Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, minus quasi. Ratione et porro alias esse mollitia similique non sit expedita voluptatum rerum, quidem quod facere sint corrupti tempore veritatis?, Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis facere libero sapiente magni consectetur consequuntur voluptates at laborum nihil officia? Consequatur pariatur aperiam distinctio quas ratione quaerat totam suscipit facilis., Lorem ipsum dolor sit, amet consectetur adipisicing elit. Praesentium dignissimos nisi voluptatem totam earum amet labore at doloribus mollitia eveniet expedita quo, molestias est non sunt atque fugiat error corporis!
+                .blog-2.pad16.flex.flex-dir.gap48
+                    .namings.flex.flex-align.gap16
+                        img(src="/img/test3.jpeg", alt="person", srcset="").blog-img
+                        .blog-writer-name 
+                            p.blog-name Curdforts B2B is awosome!
+                            p.writer-name william jon
+                    .blog-content.flex.flex-dir.gap16
+                        p.blog-value Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aspernatur in enim laboriosam exercitationem, cu
+                        p.des-blog Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aspernatur in enim laboriosam exercitationem, cum corporis ut, dolor alias ducimus adipisci minus eius debitis sit at illo aliquid. Praesentium, perferendis saepe!
+
+                .blog-3.pad16.flex.flex-dir.gap48
+                    .namings.flex.flex-align.gap16
+                        img(src="/img/test1.jpg", alt="person", srcset="").blog-img
+                        .blog-writer-name 
+                            p.blog-name Curdforts B2B is awosome!
+                            p.writer-name william jon
+                    .blog-content.flex.flex-dir.gap16
+                        p.blog-value Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aspernatur in enim laboriosam exercitationem, cu
+                        p.des-blog Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aspernatur in enim laboriosam exercitationem, cum corporis ut, dolor alias ducimus adipisci minus eius debitis sit at illo aliquid. Praesentium, perferendis saepe!, Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aspernatur in enim laboriosam exercitationem, cum corporis ut, dolor alias ducimus adipisci minus eius debitis sit at illo aliquid. Praesentium, perferendis saepe!, Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aspernatur in enim laboriosam exercitationem, cum corporis ut, dolor alias ducimus adipisci minus eius debitis sit at illo aliquid. Praesentium, perferendis saepe!, Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aspernatur in enim laboriosam exercitationem, cum corporis ut, dolor alias ducimus adipisci minus eius debitis sit at illo aliquid. Praesentium, perferendis saepe!
+                .blog-4.pad16.flex.flex-dir.gap48
+                    .namings.flex.flex-align.gap16
+                        img(src="/img/avatar2.png", alt="person", srcset="").blog-img
+                        .blog-writer-name 
+                            p.blog-name Curdforts B2B is awosome!
+                            p.writer-name william jon
+                    .blog-content.flex.flex-dir.gap16
+                        p.blog-value Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aspernatur in enim laboriosam exercitationem, cu
+                        p.des-blog Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aspernatur in enim laboriosam exercitationem, cum corporis ut, dolor alias ducimus adipisci minus eius debitis sit at illo aliquid. Praesentium, perferendis saepe!
+                .blog-5.pad16.flex.flex-dir.gap48
+                    .namings.flex.flex-align.gap16
+                        img(src="/img/avatar2.png", alt="person", srcset="").blog-img
+                        .blog-writer-name 
+                            p.blog-name Curdforts B2B is awosome!
+                            p.writer-name william jon
+                    .blog-content.flex.flex-dir.gap16
+                        p.blog-value Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aspernatur in enim laboriosam exercitationem, cu
+                        p.des-blog Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aspernatur in enim laboriosam exercitationem, cum corporis ut, dolor alias ducimus adipisci minus eius debitis sit at illo aliquid. Praesentium, perferendis saepe!, Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aspernatur in enim laboriosam exercitationem, cum corporis ut, dolor alias ducimus adipisci minus eius debitis sit at illo aliquid. Praesentium, perferendis saepe!, Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aspernatur in enim laboriosam exercitationem, cum corporis ut, dolor alias ducimus adipisci minus eius debitis sit at illo aliquid. Praesentium, perferendis saepe!, Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aspernatur in enim laboriosam exercitationem, cum corporis ut, dolor alias ducimus adipisci minus eius debitis sit at illo aliquid. Praesentium, perferendis saepe!
+
+        script(src='/js/auth.js')
+        script(src='/js/menubar.js')
+
+        script(src='https://cdnjs.cloudflare.com/ajax/libs/axios/1.2.2/axios.min.js')
+    footer.pad96.footer.flex.flex-dir.gap96
+        .logo-container.flex.flex-dir.flex.align
+            img(src="/img/inf4.png", alt="", srcset="").logo-img-foot
+            p.logo-foot cordtects 
+
+        .footer-container.grid.grid-4-col.gap96
+            .foot-div.flex.flex-dir.gap16 
+                h6.foot-heading Company
+                a(href='#').foot-link About us 
+                a(href='#').foot-link Content now!
+                a(href='#').foot-link Business
+                a(href='#').foot-link Get stared
+            .foot-div.flex.flex-dir.gap16 
+                h6.foot-heading Social 
+                a(href='#').foot-link Twitter
+                a(href='#').foot-link Instagram
+                a(href='#').foot-link Facebook
+            .foot-div.flex.flex-dir.gap16 
+                h6.foot-heading Policy
+                a(href='#').foot-link Terms and conditions 
+                a(href='#').foot-link Return policy
+                a(href='#').foot-link refund ploicy
+                a(href='#').foot-link Shop policy
+            .foot-div.flex.flex-dir.gap16 
+                h6.foot-heading carrier
+                a(href='#').foot-link Apply for job 
+                a(href='#').foot-link internship
+                a(href='#').foot-link Open your store
+                a(href='#').foot-link Our API
+
